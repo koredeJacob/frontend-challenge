@@ -1,6 +1,7 @@
 import TodoApp from "./TodoApp";
 
 export function App() {
+  
   return (
     <div className="font-sans flex flex-col gap-y-7 lg:gap-y-10">
       <header className="bg-main py-1.5 lg:py-2">

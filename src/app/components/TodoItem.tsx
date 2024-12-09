@@ -4,15 +4,17 @@ import { Todo } from "../types"
 
 type myComponentProps={
     remove:boolean,
-    item:Todo
+    add:boolean,
+    item:Todo,
     handleModal:(id:number[])=>void
 }
 
-function TodoItem({item,handleModal,remove}:myComponentProps){
+function TodoItem({item,handleModal,remove,add}:myComponentProps){
 
     const [todoList,setTodoList]=useRecoilState(todoListState)
 
     //change status of todo task
+    console.log(add)
     const handleChange=()=>{
         const newitem={...item,isComplete:!item.isComplete}
         const newList=todoList.map((item)=>{
@@ -26,7 +28,7 @@ function TodoItem({item,handleModal,remove}:myComponentProps){
 
     return (
         <div>
-            <div className={`flex content-center gap-2 py-1.5 lg:py-2 transition duration-300 ease-in ${remove ? "opacity-0 scale-0":"transition-none"}`}>
+            <div className={`flex content-center gap-2 py-1.5 lg:py-2 transition duration-500 ease-in ${remove ? "opacity-0":"opacity-1"} ${ add ?"opacity-0":"opacity-1"}`}>
                 <input type="checkbox" className="w-4 transition duration-300 checked:scale-125 " checked={item.isComplete} onChange={handleChange}/>
                 <p className={`transition-all duration-500 w-[90%] text-lg text-dark tracking-wide font-medium ${item.isComplete?'line-through decoration-2 text-light animate-dashFade':''}`}>{item.item}</p>
                 <button onClick={()=>handleModal([item.id])} aria-label="delete button" className="transition duration-300 ease-in-out hover:scale-110">
@@ -42,7 +44,7 @@ function TodoItem({item,handleModal,remove}:myComponentProps){
                     </svg>
                 </button>
             </div>
-            <hr className="w-[90%] lg:border-2 bg-lightblue mx-auto" />
+            <hr className={`w-[90%] lg:border-2 bg-lightblue mx-auto transition duration-500 ease-in ${remove ? "opacity-0":""} ${ add ?"opacity-0":"opacity-1"}`} />
         </div>
     )
 }
