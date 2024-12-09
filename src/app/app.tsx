@@ -1,9 +1,11 @@
+import TodoApp from "./TodoApp";
 
 export function App() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <h1>TODO APP</h1>
+      <TodoApp/>
+    </>
   );
 }
 
