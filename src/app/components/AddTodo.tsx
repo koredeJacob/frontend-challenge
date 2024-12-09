@@ -4,6 +4,7 @@ import { todoListState } from '../store/atoms/todoAtom'
 import { Todo } from 'src/app/types'
 
 function AddTodo(){
+
     const [text,setText]=useState('')
     const setTodoList=useSetRecoilState(todoListState)
 
@@ -22,8 +23,6 @@ function AddTodo(){
     ]);
     setText('');
     }
-
-
 
     return (
         <>

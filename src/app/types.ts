@@ -4,3 +4,8 @@ export interface Todo{
     isComplete: boolean
 }
 
+export interface ConfirmModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+}
