@@ -15,7 +15,7 @@ function AddTodo(){
         setTodoList((oldTodoList:Todo[]):Todo[] => [
       ...oldTodoList,
       {
-        id: oldTodoList.length,
+        id: oldTodoList.length?oldTodoList[oldTodoList.length-1].id+1:0,
         item: text,
         isComplete: false,
       },

@@ -21,3 +21,8 @@ export const todoListState = atom<Todo[]>({
     localStorageEffect<Todo[]>('todolist'),
   ]
 });
+
+export const todoListFilterState=atom<string>({
+  key: 'TodoListFilter',
+  default:'show all'
+})
