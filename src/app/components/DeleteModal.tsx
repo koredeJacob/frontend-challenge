@@ -9,11 +9,11 @@ const DeleteModal:React.FC<ConfirmModalProps>=({isOpen,onClose,onConfirm})=>{
             onClick={onClose}
         >
             <div
-                className="bg-white rounded-lg shadow-lg p-6 w-80 sm:w-96"
+                className="bg-main rounded-lg shadow-lg p-6 w-80 sm:w-96"
                 onClick={(e) => e.stopPropagation()}
             >
-                <h3 className="text-lg font-semibold text-gray-800">Confirm Delete</h3>
-                <p className="mt-4 text-gray-600">Are you sure you want to delete this items?</p>
+                <h3 className="text-lg font-semibold text-dark">Confirm Delete</h3>
+                <p className="mt-4 text-gray-600 font-medium">Are you sure you want to delete this items?</p>
                 <div className="mt-6 flex justify-end space-x-4">
                     <button
                         onClick={onClose}

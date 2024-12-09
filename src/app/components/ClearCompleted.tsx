@@ -16,7 +16,7 @@ function ClearCompleted({handleModal}:myComponentProps){
     }
 
     return(
-        <button onClick={deleteCompleted}>Clear Completed</button>
+        <button onClick={deleteCompleted} className="transition duration-200 ease-in hover:scale-105 absolute bottom-3.5 right-3.5 bg-lightblue text-white font-medium p-2 rounded-lg">CLEAR COMPLETED</button>
     )
 }
 

@@ -11,7 +11,18 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        main: '#F1ECE6',
+        lightblue: '#76B7CD',
+        orange: '#D98326',
+        dark: '#323232',
+        light: '#C2C2C2',
+      },
+      screens: {
+        sm: '400px',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };

@@ -27,7 +27,7 @@ function TodoContainer(){
     }
     
     return (
-        <main>
+        <main className="">
             {filteredList.map((todoItem,index)=><TodoItem item={todoItem} handleModal={handleModal} key={index}/>)}
             <ClearCompleted handleModal={handleModal}/>
             <DeleteModal isOpen={modalOpen} onClose={()=>setModalOpen(false)} onConfirm={handleDelete} />

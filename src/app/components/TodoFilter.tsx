@@ -10,7 +10,7 @@ function TodoFilter(){
     }
 
     return (
-        <select value={filter} onChange={updateFilter}>
+        <select value={filter} onChange={updateFilter} className="bg-main w-fit text-orange font-medium rounded-sm outline-0 px-0.5">
             <option value='Show All'>All</option>
             <option value='Show Completed'>Completed</option>
             <option value='Show Uncompleted'>Uncompleted</option>
