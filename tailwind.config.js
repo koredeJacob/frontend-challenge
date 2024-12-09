@@ -20,7 +20,7 @@ module.exports = {
         light: '#C2C2C2',
       },
       screens: {
-        sm: '410px',
+        sm: '412px',
       },
       keyframes: {
         dashFade: {
