@@ -22,6 +22,15 @@ module.exports = {
       screens: {
         sm: '400px',
       },
+      keyframes: {
+        dashFade: {
+          '0%': { textDecorationColor: 'currentColor', opacity: '1' },
+          '100%': { textDecorationColor: 'currentColor', opacity: '1' },
+        },
+      },
+      animation: {
+        dashFade: 'dashFade 2s ease-in',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

@@ -9,7 +9,7 @@ function TodoApp(){
                 <AddTodo/>
                 <TodoFilter/>
             </section>
-            <section className="relative h-[250px] lg:h-[300px] md:scrollbar-hide bg-main p-2.5 rounded-xl overflow-y-scroll">
+            <section >
                 <TodoContainer/>
             </section>
         </>

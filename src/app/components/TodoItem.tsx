@@ -3,11 +3,12 @@ import { todoListState } from "../store/atoms/todoAtom"
 import { Todo } from "../types"
 
 type myComponentProps={
+    remove:boolean,
     item:Todo
     handleModal:(id:number[])=>void
 }
 
-function TodoItem({item,handleModal}:myComponentProps){
+function TodoItem({item,handleModal,remove}:myComponentProps){
 
     const [todoList,setTodoList]=useRecoilState(todoListState)
 
@@ -25,9 +26,9 @@ function TodoItem({item,handleModal}:myComponentProps){
 
     return (
         <div>
-            <div className="flex content-center gap-2 py-1.5 lg:py-2">
-                <input type="checkbox" className="w-4 " checked={item.isComplete} onChange={handleChange}/>
-                <p className="w-[90%] text-lg text-dark font-medium">{item.item}</p>
+            <div className={`flex content-center gap-2 py-1.5 lg:py-2 transition duration-300 ease-in ${remove ? "opacity-0 scale-0":"transition-none"}`}>
+                <input type="checkbox" className="w-4 transition duration-300 checked:scale-125 " checked={item.isComplete} onChange={handleChange}/>
+                <p className={`transition-all duration-500 w-[90%] text-lg text-dark tracking-wide font-medium ${item.isComplete?'line-through decoration-2 text-light animate-dashFade':''}`}>{item.item}</p>
                 <button onClick={()=>handleModal([item.id])} aria-label="delete button" className="transition duration-300 ease-in-out hover:scale-110">
                     <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.3" clipPath="url(#clip0_108_146)">
@@ -41,7 +42,7 @@ function TodoItem({item,handleModal}:myComponentProps){
                     </svg>
                 </button>
             </div>
-            <hr className="w-[90%]  bg-lightblue mx-auto" />
+            <hr className="w-[90%] lg:border-2 bg-lightblue mx-auto" />
         </div>
     )
 }
